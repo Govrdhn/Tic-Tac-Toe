@@ -2,13 +2,14 @@ import math
 import random
 
 class Player:
-    def __init__(self, letter):
+    def __init__(self, name, letter):
+        self.name = name
         self.letter = letter
     
 # computer player
 class ComputerPlayer(Player):
-    def __init__(self, letter):
-        super().__init__(letter)
+    def __init__(self, name, letter):
+        super().__init__(name, letter)
     
     def get_move(self, game):
         spot = None
@@ -19,8 +20,8 @@ class ComputerPlayer(Player):
 
 # manual player
 class HumanPlayer(Player):
-    def __init__(self, letter):
-        super().__init__(letter)
+    def __init__(self, name, letter):
+        super().__init__(name, letter)
 
     def get_move(self, game):
         gotSpot = False
