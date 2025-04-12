@@ -5,7 +5,7 @@ human = HumanPlayer('x')
 computer = ComputerPlayer('o')
 game = Game()
 
-while True:
+while len(game.available_moves) > 0:
     move_spot = None
     if(game.current_letter == 'x'):
         move_spot = human.get_move(game)

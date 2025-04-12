@@ -27,7 +27,7 @@ class HumanPlayer(Player):
         spot = None
         while not gotSpot:
             try:
-                spot = int(input("Enter the spot:"))
+                spot = int(input("Enter the spot:"))-1
                 if(spot in game.available_moves):
                     gotSpot = True
                     return spot
@@ -36,11 +36,3 @@ class HumanPlayer(Player):
             except:
                 print("Enter a valid spot!")
                 continue
-
-# x = ['x', 'x', 'x', 'o', 'o', 'x', ' ', 'x', ' ']
-# rows = [x[i*3:(i+1)*3] for i in range(3)]
-# for row in rows:
-#             print(' | '.join([i for i in row]))
-
-# if(x[0] == x[1] == x[2] == 'x' or 'o'):
-#            print(f'Winner is {x[0]} player')
