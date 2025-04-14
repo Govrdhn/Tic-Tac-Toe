@@ -43,6 +43,10 @@ class Game:
         if(('x' in diagnal_set_2 or 'o' in diagnal_set_2) and len(diagnal_set_2) == 1):
             print(figlet_format(f'{self.current_player.name} won!'))
             return True
+        
+        if(len(self.available_moves) == 0):
+            print(figlet_format("It's a Draw!"))
+            return False
 
         return False
 
@@ -53,6 +57,7 @@ class Game:
             print('Spot is already occupied!')
             return False
         self.spots[spot] = letter
+        self.available_moves.remove(spot)
 
         print(f'{self.current_player.name}:')
         self.print_game()
@@ -62,7 +67,6 @@ class Game:
             return False
 
         self.current_player = self.y_player if self.current_player == self.x_player else self.x_player
-        self.available_moves.remove(spot)
         return True
     
     def play(self):
